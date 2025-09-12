@@ -1,24 +1,24 @@
 # README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+Прототип приложения для ресторанного онлайн бронирования.
 
-Things you may want to cover:
+Приложение написано на Ruby on Rails с использованием gem'a для работы с SOAP - [Savon](https://www.savonrb.com/).
 
-* Ruby version
+Стандартный закупуск через `rails -s`, доступ на веб-страницу на стандартном порту для Rails.
 
-* System dependencies
+Доступно получение списка ресторанов и получение доступных временных слотов.
 
-* Configuration
+## Сложности и проблемы:
+- wsdl файл является составным и не работал как есть. Был объединен в один merged файл
+- получаемые из API данные автоматически конвертируются в объектный формат Ruby, но сложны в работе из-за большого уровня вложенности
+- получение временных слотов отрабатывает для одного ресторана (percorso), но не отрабатывает для второго (xander) из-за разницы в структуре получаемых данных
+- создание бронирования через AvailabilityRequest в данном прототипе не реализовано
+- AvailabilityRequest при тестированни через SOAP UI работает нестабильно - для xander отрабатывает, для percorso - нет. Причина не ясна, работа с ошибками затруднена из-за того, что бэкэнд не выдает никаких подробновней не в ответ API, ни в логах.
 
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+## Краткое описание основных методов API
+1. TemplateCategory. Список категорий объектов.
+2. TemplateInfo. Список объектов (ресторанов и прочего).
+3. Availability. Создание брони (временной).
+4. Create. Подтверждение временной брони.
+5. FetchRestaurantOpeningHours. Получение доступных временных слотов для бронировани времени в ресторане.
+6. FetchRestaurantUtilizaitionOverview. Получение загрузки ресторана на указанный временной слот.
