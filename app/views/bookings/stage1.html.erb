@@ -1,0 +1,19 @@
+<%= button_to "Загрузить список ресторанов", '/bookings/stage1_get_rests', method: :get %>
+
+
+<% if @rests.present? %>
+	<%= form_tag '/bookings/get_time_slots' do %>  
+
+		
+			<br>
+			<%= label_tag(:rest, "Ресторан:") %>
+			<%= select_tag(:rest, options_for_select(@rests) ) %>
+
+			<%= label_tag(:date, "Дата:") %>
+			<%= date_field(:date, :requested_date) %>
+		
+		<br><br>
+
+		<%= submit_tag("Получить временные слоты") %>
+	<% end %>
+<% end %>

@@ -1,0 +1,21 @@
+
+
+<h2><%= @rest_short_name %></h2>
+<h2><%= @requested_date %></h2>
+
+
+<p>=================</p>
+<%= form_tag '/bookings/submit_booking' do %>  
+	<%= label_tag(:time_slot, "Временной слот:") %>
+	<%= select_tag(:time_slot, options_for_select(@time_slots)) %>
+
+	<br>
+	<%= label_tag(:lastname, "Фамилия:") %>
+	<%= text_field_tag(:lastname) %>
+	<br>
+	<%= label_tag(:firstname, "Имя:") %>
+	<%= text_field_tag(:firstname) %>
+
+	<br><br>
+	<%= submit_tag("Забронировать посещение") %>
+<% end %>

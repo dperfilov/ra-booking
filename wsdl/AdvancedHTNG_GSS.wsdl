@@ -1,0 +1,1452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<wsdl:definitions xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://www.reservationassistant.com" xmlns:b="http://www.reservationassistant.com/Booking/Types" xmlns:c="http://www.reservationassistant.com/Common/Types" xmlns:n="http://www.reservationassistant.com/Name/Types" xmlns:s="http://www.reservationassistant.com/Sale/Types" xmlns:g="http://www.reservationassistant.com/GiftCertificate/Types" xmlns:m="http://www.reservationassistant.com/Membership/Types" xmlns:cf="http://www.reservationassistant.com/Configuration/Types" xmlns:ns="http://schemas.xmlsoap.org/soap/encoding/" targetNamespace="http://www.reservationassistant.com">
+	<wsdl:types>
+		<xs:schema>
+			<xs:import namespace="http://www.reservationassistant.com/Common/Types" schemaLocation="./Common.xsd"/>
+			<xs:import namespace="http://www.reservationassistant.com/Name/Types" schemaLocation="./Name.xsd"/>
+			<xs:import namespace="http://www.reservationassistant.com/Sale/Types" schemaLocation="./Sale.xsd"/>
+			<xs:import namespace="http://www.reservationassistant.com/Booking/Types" schemaLocation="./Booking.xsd"/>
+			<xs:import namespace="http://www.reservationassistant.com/GiftCertificate/Types" schemaLocation="./GiftCertificate.xsd"/>
+			<xs:import namespace="http://www.reservationassistant.com/Configuration/Types" schemaLocation="./Configuration.xsd"/>
+			<xs:import namespace="http://www.reservationassistant.com/Membership/Types" schemaLocation="./Membership.xsd"/>
+		</xs:schema>
+	</wsdl:types>
+	<wsdl:message name="FetchProfileBookingHistoryRequest">
+		<wsdl:part name="FetchProfileBookingHistoryRequest" element="b:FetchProfileBookingHistoryRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchProfileBookingHistoryResponse">
+		<wsdl:part name="FetchProfileBookingHistoryResponse" element="b:FetchProfileBookingHistoryResponse"/>
+	</wsdl:message>
+	<wsdl:message name="PostUnpaidHotelBookingsRequest">
+		<wsdl:part name="PostUnpaidHotelBookingsRequest" element="b:PostUnpaidHotelBookingsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="PostUnpaidHotelBookingsResponse">
+		<wsdl:part name="PostUnpaidHotelBookingsResponse" element="b:PostUnpaidHotelBookingsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchReportRequest">
+		<wsdl:part name="FetchReportRequest" element="c:FetchReportRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchReportResponse">
+		<wsdl:part name="FetchReportResponse" element="c:FetchReportResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchProfileRequest">
+		<wsdl:part name="FetchProfileRequest" element="n:FetchProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchProfileResponse">
+		<wsdl:part name="FetchProfileResponse" element="n:FetchProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="SubscribeProfileRequest">
+		<wsdl:part name="SubscribeProfileRequest" element="n:SubscribeProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SubscribeProfileResponse">
+		<wsdl:part name="SubscribeProfileResponse" element="n:SubscribeProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="LookupProfileRequest">
+		<wsdl:part name="LookupProfileRequest" element="n:LookupProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LookupProfileResponse">
+		<wsdl:part name="LookupProfileResponse" element="n:LookupProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="NewProfileRequest">
+		<wsdl:part name="NewProfileRequest" element="n:NewProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="NewProfileResponse">
+		<wsdl:part name="NewProfileResponse" element="n:NewProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateProfileRequest">
+		<wsdl:part name="UpdateProfileRequest" element="n:UpdateProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateProfileResponse">
+		<wsdl:part name="UpdateProfileResponse" element="n:UpdateProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="MergeProfileRequest">
+		<wsdl:part name="MergeProfileRequest" element="n:MergeProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="MergeProfileResponse">
+		<wsdl:part name="MergeProfileResponse" element="n:MergeProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchReservationRequest">
+		<wsdl:part name="FetchReservationRequest" element="n:FetchReservationRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchReservationResponse">
+		<wsdl:part name="FetchReservationResponse" element="n:FetchReservationResponse"/>
+	</wsdl:message>
+	<wsdl:message name="LookupReservationRequest">
+		<wsdl:part name="LookupReservationRequest" element="n:LookupReservationRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LookupReservationResponse">
+		<wsdl:part name="LookupReservationResponse" element="n:LookupReservationResponse"/>
+	</wsdl:message>
+	<wsdl:message name="VerifyAccountRequest">
+		<wsdl:part name="VerifyAccountRequest" element="n:VerifyAccountRequest"/>
+	</wsdl:message>
+	<wsdl:message name="VerifyAccountResponse">
+		<wsdl:part name="VerifyAccountResponse" element="n:VerifyAccountResponse"/>
+	</wsdl:message>
+	<wsdl:message name="TemplateCategoryRequest">
+		<wsdl:part name="TemplateCategoryRequest" element="cf:TemplateCategoryRequest"/>
+	</wsdl:message>
+	<wsdl:message name="TemplateCategoryResponse">
+		<wsdl:part name="TemplateCategoryResponse" element="cf:TemplateCategoryResponse"/>
+	</wsdl:message>
+	<wsdl:message name="TemplateInfoRequest">
+		<wsdl:part name="TemplateInfoRequest" element="cf:TemplateInfoRequest"/>
+	</wsdl:message>
+	<wsdl:message name="TemplateInfoResponse">
+		<wsdl:part name="TemplateInfoResponse" element="cf:TemplateInfoResponse"/>
+	</wsdl:message>
+	<wsdl:message name="PaymentConditionRequest">
+		<wsdl:part name="PaymentConditionRequest" element="cf:PaymentConditionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="PaymentConditionResponse">
+		<wsdl:part name="PaymentConditionResponse" element="cf:PaymentConditionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateTemplateRequest">
+		<wsdl:part name="UpdateTemplateRequest" element="cf:UpdateTemplateRequest"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateTemplateResponse">
+		<wsdl:part name="UpdateTemplateResponse" element="cf:UpdateTemplateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="LookupCountryRequest">
+		<wsdl:part name="LookupCountryRequest" element="cf:LookupCountryRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LookupCountryResponse">
+		<wsdl:part name="LookupCountryResponse" element="cf:LookupCountryResponse"/>
+	</wsdl:message>
+	<wsdl:message name="LookupLanguageRequest">
+		<wsdl:part name="LookupLanguageRequest" element="cf:LookupLanguageRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LookupLanguageResponse">
+		<wsdl:part name="LookupLanguageResponse" element="cf:LookupLanguageResponse"/>
+	</wsdl:message>
+	<wsdl:message name="LookupSegmentCodeRequest">
+		<wsdl:part name="LookupSegmentCodeRequest" element="cf:LookupSegmentCodeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LookupSegmentCodeResponse">
+		<wsdl:part name="LookupSegmentCodeResponse" element="cf:LookupSegmentCodeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchUserDetailRequest">
+		<wsdl:part name="FetchUserDetailRequest" element="cf:FetchUserDetailRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchUserDetailResponse">
+		<wsdl:part name="FetchUserDetailResponse" element="cf:FetchUserDetailResponse"/>
+	</wsdl:message>
+	<wsdl:message name="LookupPermissionConditionRequest">
+		<wsdl:part name="LookupPermissionConditionRequest" element="cf:LookupPermissionConditionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LookupPermissionConditionResponse">
+		<wsdl:part name="LookupPermissionConditionResponse" element="cf:LookupPermissionConditionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="LookupPropertyRequest">
+		<wsdl:part name="LookupPropertyRequest" element="cf:LookupPropertyRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LookupPropertyResponse">
+		<wsdl:part name="LookupPropertyResponse" element="cf:LookupPropertyResponse"/>
+	</wsdl:message>
+	<wsdl:message name="LookupCustomerTypeRequest">
+		<wsdl:part name="LookupCustomerTypeRequest" element="cf:LookupCustomerTypeRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LookupCustomerTypeResponse">
+		<wsdl:part name="LookupCustomerTypeResponse" element="cf:LookupCustomerTypeResponse"/>
+	</wsdl:message>
+	<wsdl:message name="AvailabilityRequest">
+		<wsdl:part name="AvailabilityRequest" element="b:AvailabilityRequest"/>
+	</wsdl:message>
+	<wsdl:message name="AvailabilityResponse">
+		<wsdl:part name="AvailabilityResponse" element="b:AvailabilityResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateTimerRequest">
+		<wsdl:part name="UpdateTimerRequest" element="b:UpdateTimerRequest"/>
+	</wsdl:message>
+	<wsdl:message name="PossibilityRequest">
+		<wsdl:part name="PossibilityRequest" element="b:PossibilityRequest"/>
+	</wsdl:message>
+	<wsdl:message name="PossibilityResponse">
+		<wsdl:part name="PossibilityResponse" element="b:PossibilityResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateRequest">
+		<wsdl:part name="CreateRequest" element="b:CreateRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateResponse">
+		<wsdl:part name="CreateResponse" element="b:CreateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteRequest">
+		<wsdl:part name="DeleteRequest" element="b:DeleteRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteResponse">
+		<wsdl:part name="DeleteResponse" element="b:DeleteResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchBookingRequest">
+		<wsdl:part name="FetchBookingRequest" element="b:FetchBookingRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchBookingResponse">
+		<wsdl:part name="FetchBookingResponse" element="b:FetchBookingResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchFlightRequest">
+		<wsdl:part name="FetchFlightRequest" element="b:FetchFlightRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchFlightResponse">
+		<wsdl:part name="FetchFlightResponse" element="b:FetchFlightResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchHotDealContingentRequest">
+		<wsdl:part name="FetchHotDealContingentRequest" element="b:FetchHotDealContingentRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchHotDealContingentResponse">
+		<wsdl:part name="FetchHotDealContingentResponse" element="b:FetchHotDealContingentResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateBookingRequest">
+		<wsdl:part name="UpdateBookingRequest" element="b:UpdateBookingRequest"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateBookingResponse">
+		<wsdl:part name="UpdateBookingResponse" element="b:UpdateBookingResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchGiftCertificateRequest">
+		<wsdl:part name="FetchGiftCertificateRequest" element="g:FetchGiftCertificateRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchGiftCertificateResponse">
+		<wsdl:part name="FetchGiftCertificateResponse" element="g:FetchGiftCertificateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="GiftCertificatePreviewRequest">
+		<wsdl:part name="GiftCertificatePreviewRequest" element="g:GiftCertificatePreviewRequest"/>
+	</wsdl:message>
+	<wsdl:message name="GiftCertificatePreviewResponse">
+		<wsdl:part name="GiftCertificatePreviewResponse" element="g:GiftCertificatePreviewResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ClearGiftCertificateRequest">
+		<wsdl:part name="ClearGiftCertificateRequest" element="g:ClearGiftCertificateRequest"/>
+	</wsdl:message>
+	<wsdl:message name="ClearGiftCertificateResponse">
+		<wsdl:part name="ClearGiftCertificateResponse" element="g:ClearGiftCertificateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateGiftCertificateRequest">
+		<wsdl:part name="UpdateGiftCertificateRequest" element="g:UpdateGiftCertificateRequest"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateGiftCertificateResponse">
+		<wsdl:part name="UpdateGiftCertificateResponse" element="g:UpdateGiftCertificateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchPrepaidCardRequest">
+		<wsdl:part name="FetchPrepaidCardRequest" element="g:FetchPrepaidCardRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchPrepaidCardResponse">
+		<wsdl:part name="FetchPrepaidCardResponse" element="g:FetchPrepaidCardResponse"/>
+	</wsdl:message>	
+	<wsdl:message name="SaleRequest">
+		<wsdl:part name="SaleRequest" element="s:SaleRequest"/>
+	</wsdl:message>
+	<wsdl:message name="SaleResponse">
+		<wsdl:part name="SaleResponse" element="s:SaleResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CancelSaleRequest">
+		<wsdl:part name="CancelSaleRequest" element="s:CancelSaleRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CancelSaleResponse">
+		<wsdl:part name="CancelSaleResponse" element="s:CancelSaleResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchContingentRequest">
+		<wsdl:part name="FetchContingentRequest" element="s:FetchContingentRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchContingentResponse">
+		<wsdl:part name="FetchContingentResponse" element="s:FetchContingentResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchMemberDetailRequest">
+		<wsdl:part name="FetchMemberDetailRequest" element="m:FetchMemberDetailRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchMemberDetailResponse">
+		<wsdl:part name="FetchMemberDetailResponse" element="m:FetchMemberDetailResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchCheckinStatisticRequest">
+		<wsdl:part name="FetchCheckinStatisticRequest" element="m:FetchCheckinStatisticRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchCheckinStatisticResponse">
+		<wsdl:part name="FetchCheckinStatisticResponse" element="m:FetchCheckinStatisticResponse"/>
+	</wsdl:message>
+	<wsdl:message name="AccountPaymentPostingRequest">
+		<wsdl:part name="AccountPaymentPostingRequest" element="m:AccountPaymentPostingRequest"/>
+	</wsdl:message>
+	<wsdl:message name="AccountPaymentPostingResponse">
+		<wsdl:part name="AccountPaymentPostingResponse" element="m:AccountPaymentPostingResponse"/>
+	</wsdl:message>
+	<wsdl:message name="MemberCheckinRequest">
+		<wsdl:part name="MemberCheckinRequest" element="m:MemberCheckinRequest"/>
+	</wsdl:message>
+	<wsdl:message name="MemberCheckinResponse">
+		<wsdl:part name="MemberCheckinResponse" element="m:MemberCheckinResponse"/>
+	</wsdl:message>
+	<wsdl:message name="MemberCheckoutRequest">
+		<wsdl:part name="MemberCheckoutRequest" element="m:MemberCheckoutRequest"/>
+	</wsdl:message>
+	<wsdl:message name="MemberCheckoutResponse">
+		<wsdl:part name="MemberCheckoutResponse" element="m:MemberCheckoutResponse"/>
+	</wsdl:message>
+	<wsdl:message name="LookupMemberDetailRequest">
+		<wsdl:part name="LookupMemberDetailRequest" element="m:LookupMemberDetailRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LookupMemberDetailResponse">
+		<wsdl:part name="LookupMemberDetailResponse" element="m:LookupMemberDetailResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateOpportunityRequest">
+		<wsdl:part name="UpdateOpportunityRequest" element="m:UpdateOpportunityRequest"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateOpportunityResponse">
+		<wsdl:part name="UpdateOpportunityResponse" element="m:UpdateOpportunityResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchMemberCategoryRequest">
+		<wsdl:part name="FetchMemberCategoryRequest" element="m:FetchMemberCategoryRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchMemberCategoryResponse">
+		<wsdl:part name="FetchMemberCategoryResponse" element="m:FetchMemberCategoryResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CalculateContractRequest">
+		<wsdl:part name="CalculateContractRequest" element="m:CalculateContractRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CalculateContractResponse">
+		<wsdl:part name="CalculateContractResponse" element="m:CalculateContractResponse"/>
+	</wsdl:message>
+	<wsdl:message name="CreateContractRequest">
+		<wsdl:part name="CreateContractRequest" element="m:CreateContractRequest"/>
+	</wsdl:message>
+	<wsdl:message name="CreateContractResponse">
+		<wsdl:part name="CreateContractResponse" element="m:CreateContractResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ActivateContractRequest">
+		<wsdl:part name="ActivateContractRequest" element="m:ActivateContractRequest"/>
+	</wsdl:message>
+	<wsdl:message name="ActivateContractResponse">
+		<wsdl:part name="ActivateContractResponse" element="m:ActivateContractResponse"/>
+	</wsdl:message>
+	<wsdl:message name="PrintContractRequest">
+		<wsdl:part name="PrintContractRequest" element="m:PrintContractRequest"/>
+	</wsdl:message>
+	<wsdl:message name="PrintContractResponse">
+		<wsdl:part name="PrintContractResponse" element="m:PrintContractResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchFeatureSetRequest">
+		<wsdl:part name="FetchFeatureSetRequest" element="cf:FetchFeatureSetRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchFeatureSetResponse">
+		<wsdl:part name="FetchFeatureSetResponse" element="cf:FetchFeatureSetResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchRestaurantUtlizationOverviewRequest">
+		<wsdl:part name="FetchRestaurantUtilizationOverviewRequest" element="b:FetchRestaurantUtilizationOverviewRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchRestaurantUtlizationOverviewResponse">
+		<wsdl:part name="FetchRestaurantUtilizationOverviewResponse" element="b:FetchRestaurantUtilizationOverviewResponse"/>
+	</wsdl:message>
+	<wsdl:message name="LookupReservationAttributeCategoryRequest">
+		<wsdl:part name="LookupReservationAttributeCategoryRequest" element="cf:LookupReservationAttributeCategoryRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LookupReservationAttributeCategoryResponse">
+		<wsdl:part name="LookupReservationAttributeCategoryResponse" element="cf:LookupReservationAttributeCategoryResponse"/>
+	</wsdl:message>
+	<wsdl:message name="RecalculatePricesRequest">
+		<wsdl:part name="RecalculatePricesRequest" element="s:RecalculatePricesRequest"/>
+	</wsdl:message>
+	<wsdl:message name="RecalculatePricesResponse">
+		<wsdl:part name="RecalculatePricesResponse" element="s:RecalculatePricesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchCurrentTimeStampRequest">
+		<wsdl:part name="FetchCurrentTimeStampRequest" element="cf:FetchCurrentTimeStampRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchCurrentTimeStampResponse">
+		<wsdl:part name="FetchCurrentTimeStampResponse" element="cf:FetchCurrentTimeStampResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchRestaurantOpeningHoursRequest">
+		<wsdl:part name="FetchRestaurantOpeningHoursRequest" element="b:FetchRestaurantOpeningHoursRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchRestaurantOpeningHoursResponse">
+		<wsdl:part name="FetchRestaurantOpeningHoursResponse" element="b:FetchRestaurantOpeningHoursResponse"/>
+	</wsdl:message>
+	<wsdl:message name="LookupGiftCertificateLayoutsRequest">
+		<wsdl:part name="LookupGiftCertificateLayoutsRequest" element="cf:LookupGiftCertificateLayoutsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LookupGiftCertificateLayoutsResponse">
+		<wsdl:part name="LookupGiftCertificateLayoutsResponse" element="cf:LookupGiftCertificateLayoutsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="LookupCourseTagsRequest">
+		<wsdl:part name="LookupCourseTagsRequest" element="cf:LookupCourseTagsRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LookupCourseTagsResponse">
+		<wsdl:part name="LookupCourseTagsResponse" element="cf:LookupCourseTagsResponse"/>
+	</wsdl:message>
+	<wsdl:message name="AvailableResourcesRequest">
+		<wsdl:part name="AvailableResourcesRequest" element="b:AvailableResourcesRequest"/>
+	</wsdl:message>
+	<wsdl:message name="AvailableResourcesResponse">
+		<wsdl:part name="AvailableResourcesResponse" element="b:AvailableResourcesResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchExternalProfileRequest">
+		<wsdl:part name="FetchExternalProfileRequest" element="n:FetchExternalProfileRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchExternalProfileResponse">
+		<wsdl:part name="FetchExternalProfileResponse" element="n:FetchExternalProfileResponse"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteContractRequest">
+		<wsdl:part name="DeleteContractRequest" element="m:DeleteContractRequest"/>
+	</wsdl:message>
+	<wsdl:message name="DeleteContractResponse">
+		<wsdl:part name="DeleteContractResponse" element="m:DeleteContractResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateContractNotificationRequest">
+		<wsdl:part name="UpdateContractNotificationRequest" element="m:UpdateContractNotificationRequest"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateContractNotificationResponse">
+		<wsdl:part name="UpdateContractNotificationResponse" element="m:UpdateContractNotificationResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ReadMediumByCardReaderRequest">
+		<wsdl:part name="ReadMediumByCardReaderRequest" element="m:ReadMediumByCardReaderRequest"/>
+	</wsdl:message>
+	<wsdl:message name="ReadMediumByCardReaderResponse">
+		<wsdl:part name="ReadMediumByCardReaderResponse" element="m:ReadMediumByCardReaderResponse"/>
+	</wsdl:message>
+	<wsdl:message name="ExpressAvailabilityRequest">
+		<wsdl:part name="ExpressAvailabilityRequest" element="b:ExpressAvailabilityRequest"/>
+	</wsdl:message>
+	<wsdl:message name="ExpressAvailabilityResponse">
+		<wsdl:part name="ExpressAvailabilityResponse" element="b:ExpressAvailabilityResponse"/>
+	</wsdl:message>
+	<wsdl:message name="LookupHolidayRequest">
+		<wsdl:part name="LookupHolidayRequest" element="cf:LookupHolidayRequest"/>
+	</wsdl:message>
+	<wsdl:message name="LookupHolidayResponse">
+		<wsdl:part name="LookupHolidayResponse" element="cf:LookupHolidayResponse"/>
+	</wsdl:message>	
+	<wsdl:message name="FetchAccountTransactionRequest">
+		<wsdl:part name="FetchAccountTransactionRequest" element="m:FetchAccountTransactionRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchAccountTransactionResponse">
+		<wsdl:part name="FetchAccountTransactionResponse" element="m:FetchAccountTransactionResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchSingleAccessPassTemplateRequest">
+		<wsdl:part name="FetchSingleAccessPassTemplateRequest" element="m:FetchSingleAccessPassTemplateRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchSingleAccessPassTemplateResponse">
+		<wsdl:part name="FetchSingleAccessPassTemplateResponse" element="m:FetchSingleAccessPassTemplateResponse"/>
+	</wsdl:message>				
+	<wsdl:message name="FetchMultiAccessPassTemplateRequest">
+		<wsdl:part name="FetchMultiAccessPassTemplateRequest" element="m:FetchMultiAccessPassTemplateRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchMultiAccessPassTemplateResponse">
+		<wsdl:part name="FetchMultiAccessPassTemplateResponse" element="m:FetchMultiAccessPassTemplateResponse"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateSignatureRequest">
+		<wsdl:part name="UpdateSignatureRequest" element="cf:UpdateSignatureRequest"/>
+	</wsdl:message>
+	<wsdl:message name="UpdateSignatureResponse">
+		<wsdl:part name="UpdateSignatureResponse" element="cf:UpdateSignatureResponse"/>
+	</wsdl:message>
+	<wsdl:message name="AddAdditionalServiceRequest">
+		<wsdl:part name="AddAdditionalServiceRequest" element="b:AddAdditionalServiceRequest"/>
+	</wsdl:message>
+	<wsdl:message name="AddAdditionalServiceResponse">
+		<wsdl:part name="AddAdditionalServiceResponse" element="b:AddAdditionalServiceResponse"/>
+	</wsdl:message>
+	<wsdl:message name="FetchPackageRequest">
+		<wsdl:part name="FetchPackageRequest" element="b:FetchPackageRequest"/>
+	</wsdl:message>
+	<wsdl:message name="FetchPackageResponse">
+		<wsdl:part name="FetchPackageResponse" element="b:FetchPackageResponse"/>
+	</wsdl:message>					
+	<wsdl:portType name="CommonPortType">
+		<wsdl:operation name="FetchReport">
+			<wsdl:input message="tns:FetchReportRequest"/>
+			<wsdl:output message="tns:FetchReportResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="NamePortType">
+		<wsdl:operation name="FetchProfile">
+			<wsdl:input message="tns:FetchProfileRequest"/>
+			<wsdl:output message="tns:FetchProfileResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="SubscribeProfile">
+			<wsdl:input message="tns:SubscribeProfileRequest"/>
+			<wsdl:output message="tns:SubscribeProfileResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="LookupProfile">
+			<wsdl:input message="tns:LookupProfileRequest"/>
+			<wsdl:output message="tns:LookupProfileResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="NewProfile">
+			<wsdl:input message="tns:NewProfileRequest"/>
+			<wsdl:output message="tns:NewProfileResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateProfile">
+			<wsdl:input message="tns:UpdateProfileRequest"/>
+			<wsdl:output message="tns:UpdateProfileResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="MergeProfile">
+			<wsdl:input message="tns:MergeProfileRequest"/>
+			<wsdl:output message="tns:MergeProfileResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchReservation">
+			<wsdl:input message="tns:FetchReservationRequest"/>
+			<wsdl:output message="tns:FetchReservationResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="LookupReservation">
+			<wsdl:input message="tns:LookupReservationRequest"/>
+			<wsdl:output message="tns:LookupReservationResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="VerifyAccount">
+			<wsdl:input message="tns:VerifyAccountRequest"/>
+			<wsdl:output message="tns:VerifyAccountResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchExternalProfile">
+			<wsdl:input message="tns:FetchExternalProfileRequest"/>
+			<wsdl:output message="tns:FetchExternalProfileResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="ConfigurationPortType">
+		<wsdl:operation name="TemplateCategory">
+			<wsdl:input message="tns:TemplateCategoryRequest"/>
+			<wsdl:output message="tns:TemplateCategoryResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="TemplateInfo">
+			<wsdl:input message="tns:TemplateInfoRequest"/>
+			<wsdl:output message="tns:TemplateInfoResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="PaymentCondition">
+			<wsdl:input message="tns:PaymentConditionRequest"/>
+			<wsdl:output message="tns:PaymentConditionResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateTemplate">
+			<wsdl:input message="tns:UpdateTemplateRequest"/>
+			<wsdl:output message="tns:UpdateTemplateResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="LookupCountry">
+			<wsdl:input message="tns:LookupCountryRequest"/>
+			<wsdl:output message="tns:LookupCountryResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="LookupLanguage">
+			<wsdl:input message="tns:LookupLanguageRequest"/>
+			<wsdl:output message="tns:LookupLanguageResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="LookupSegmentCode">
+			<wsdl:input message="tns:LookupSegmentCodeRequest"/>
+			<wsdl:output message="tns:LookupSegmentCodeResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchUserDetail">
+			<wsdl:input message="tns:FetchUserDetailRequest"/>
+			<wsdl:output message="tns:FetchUserDetailResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="LookupPermissionCondition">
+			<wsdl:input message="tns:LookupPermissionConditionRequest"/>
+			<wsdl:output message="tns:LookupPermissionConditionResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="LookupProperty">
+			<wsdl:input message="tns:LookupPropertyRequest"/>
+			<wsdl:output message="tns:LookupPropertyResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchFeatureSet">
+			<wsdl:input message="tns:FetchFeatureSetRequest"/>
+			<wsdl:output message="tns:FetchFeatureSetResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="LookupCustomerType">
+			<wsdl:input message="tns:LookupCustomerTypeRequest"/>
+			<wsdl:output message="tns:LookupCustomerTypeResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="LookupReservationAttributeCategory">
+			<wsdl:input message="tns:LookupReservationAttributeCategoryRequest"/>
+			<wsdl:output message="tns:LookupReservationAttributeCategoryResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchCurrentTimeStamp">
+			<wsdl:input message="tns:FetchCurrentTimeStampRequest"/>
+			<wsdl:output message="tns:FetchCurrentTimeStampResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="LookupGiftCertificateLayouts">
+			<wsdl:input message="tns:LookupGiftCertificateLayoutsRequest"/>
+			<wsdl:output message="tns:LookupGiftCertificateLayoutsResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="LookupCourseTags">
+			<wsdl:input message="tns:LookupCourseTagsRequest"/>
+			<wsdl:output message="tns:LookupCourseTagsResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="LookupHoliday">
+			<wsdl:input message="tns:LookupHolidayRequest"/>
+			<wsdl:output message="tns:LookupHolidayResponse"/>
+		</wsdl:operation>							
+		<wsdl:operation name="UpdateSignature">
+			<wsdl:input message="tns:UpdateSignatureRequest"/>
+			<wsdl:output message="tns:UpdateSignatureResponse"/>
+		</wsdl:operation>			
+	</wsdl:portType>
+	<wsdl:portType name="BookingPortType">
+		<wsdl:operation name="FetchProfileBookingHistory">
+			<wsdl:input message="tns:FetchProfileBookingHistoryRequest"/>
+			<wsdl:output message="tns:FetchProfileBookingHistoryResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="PostUnpaidHotelBookings">
+			<wsdl:input message="tns:PostUnpaidHotelBookingsRequest"/>
+			<wsdl:output message="tns:PostUnpaidHotelBookingsResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="Availability">
+			<wsdl:input message="tns:AvailabilityRequest"/>
+			<wsdl:output message="tns:AvailabilityResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateTimer">
+			<wsdl:input message="tns:UpdateTimerRequest"/>
+		</wsdl:operation>
+		<wsdl:operation name="Possibility">
+			<wsdl:input message="tns:PossibilityRequest"/>
+			<wsdl:output message="tns:PossibilityResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="Create">
+			<wsdl:input message="tns:CreateRequest"/>
+			<wsdl:output message="tns:CreateResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="Delete">
+			<wsdl:input message="tns:DeleteRequest"/>
+			<wsdl:output message="tns:DeleteResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchBooking">
+			<wsdl:input message="tns:FetchBookingRequest"/>
+			<wsdl:output message="tns:FetchBookingResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateBooking">
+			<wsdl:input message="tns:UpdateBookingRequest"/>
+			<wsdl:output message="tns:UpdateBookingResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchFlight">
+			<wsdl:input message="tns:FetchFlightRequest"/>
+			<wsdl:output message="tns:FetchFlightResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchHotDealContingent">
+			<wsdl:input message="tns:FetchHotDealContingentRequest"/>
+			<wsdl:output message="tns:FetchHotDealContingentResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchRestaurantUtilizationOverview">
+			<wsdl:input message="tns:FetchRestaurantUtlizationOverviewRequest"/>
+			<wsdl:output message="tns:FetchRestaurantUtlizationOverviewResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchRestaurantOpeningHours">
+			<wsdl:input message="tns:FetchRestaurantOpeningHoursRequest"/>
+			<wsdl:output message="tns:FetchRestaurantOpeningHoursResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="AvailableResources">
+			<wsdl:input message="tns:AvailableResourcesRequest"/>
+			<wsdl:output message="tns:AvailableResourcesResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="ExpressAvailability">
+			<wsdl:input message="tns:ExpressAvailabilityRequest"/>
+			<wsdl:output message="tns:ExpressAvailabilityResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="AddAdditionalService">
+			<wsdl:input message="tns:AddAdditionalServiceRequest"/>
+			<wsdl:output message="tns:AddAdditionalServiceResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchPackage">
+			<wsdl:input message="tns:FetchPackageRequest"/>
+			<wsdl:output message="tns:FetchPackageResponse"/>
+		</wsdl:operation>					
+	</wsdl:portType>
+	<wsdl:portType name="GiftCertificatePortType">
+		<wsdl:operation name="FetchGiftCertificate">
+			<wsdl:input message="tns:FetchGiftCertificateRequest"/>
+			<wsdl:output message="tns:FetchGiftCertificateResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="GiftCertificatePreview">
+			<wsdl:input message="tns:GiftCertificatePreviewRequest"/>
+			<wsdl:output message="tns:GiftCertificatePreviewResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="ClearGiftCertificate">
+			<wsdl:input message="tns:ClearGiftCertificateRequest"/>
+			<wsdl:output message="tns:ClearGiftCertificateResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateGiftCertificate">
+			<wsdl:input message="tns:UpdateGiftCertificateRequest"/>
+			<wsdl:output message="tns:UpdateGiftCertificateResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchPrepaidCard">
+			<wsdl:input message="tns:FetchPrepaidCardRequest"/>
+			<wsdl:output message="tns:FetchPrepaidCardResponse"/>
+		</wsdl:operation>		
+	</wsdl:portType>
+	<wsdl:portType name="SalePortType">
+		<wsdl:operation name="Sale">
+			<wsdl:input message="tns:SaleRequest"/>
+			<wsdl:output message="tns:SaleResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="CancelSale">
+			<wsdl:input message="tns:CancelSaleRequest"/>
+			<wsdl:output message="tns:CancelSaleResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchContingent">
+			<wsdl:input message="tns:FetchContingentRequest"/>
+			<wsdl:output message="tns:FetchContingentResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="RecalculatePrices">
+			<wsdl:input message="tns:RecalculatePricesRequest"/>
+			<wsdl:output message="tns:RecalculatePricesResponse"/>
+		</wsdl:operation>
+	</wsdl:portType>
+	<wsdl:portType name="MembershipPortType">
+		<wsdl:operation name="FetchMemberDetail">
+			<wsdl:input message="tns:FetchMemberDetailRequest"/>
+			<wsdl:output message="tns:FetchMemberDetailResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchCheckinStatistic">
+			<wsdl:input message="tns:FetchCheckinStatisticRequest"/>
+			<wsdl:output message="tns:FetchCheckinStatisticResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="AccountPaymentPosting">
+			<wsdl:input message="tns:AccountPaymentPostingRequest"/>
+			<wsdl:output message="tns:AccountPaymentPostingResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="MemberCheckin">
+			<wsdl:input message="tns:MemberCheckinRequest"/>
+			<wsdl:output message="tns:MemberCheckinResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="MemberCheckout">
+			<wsdl:input message="tns:MemberCheckoutRequest"/>
+			<wsdl:output message="tns:MemberCheckoutResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="LookupMemberDetail">
+			<wsdl:input message="tns:LookupMemberDetailRequest"/>
+			<wsdl:output message="tns:LookupMemberDetailResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateOpportunity">
+			<wsdl:input message="tns:UpdateOpportunityRequest"/>
+			<wsdl:output message="tns:UpdateOpportunityResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchMemberCategory">
+			<wsdl:input message="tns:FetchMemberCategoryRequest"/>
+			<wsdl:output message="tns:FetchMemberCategoryResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="CalculateContract">
+			<wsdl:input message="tns:CalculateContractRequest"/>
+			<wsdl:output message="tns:CalculateContractResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="CreateContract">
+			<wsdl:input message="tns:CreateContractRequest"/>
+			<wsdl:output message="tns:CreateContractResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="ActivateContract">
+			<wsdl:input message="tns:ActivateContractRequest"/>
+			<wsdl:output message="tns:ActivateContractResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="PrintContract">
+			<wsdl:input message="tns:PrintContractRequest"/>
+			<wsdl:output message="tns:PrintContractResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteContract">
+			<wsdl:input message="tns:DeleteContractRequest"/>
+			<wsdl:output message="tns:DeleteContractResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateContractNotification">
+			<wsdl:input message="tns:UpdateContractNotificationRequest"/>
+			<wsdl:output message="tns:UpdateContractNotificationResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="RequestMediumByCardReader">
+			<wsdl:input message="tns:ReadMediumByCardReaderRequest"/>
+			<wsdl:output message="tns:ReadMediumByCardReaderResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchAccountTransaction">
+			<wsdl:input message="tns:FetchAccountTransactionRequest"/>
+			<wsdl:output message="tns:FetchAccountTransactionResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchSingleAccessPassTemplate">
+			<wsdl:input message="tns:FetchSingleAccessPassTemplateRequest"/>
+			<wsdl:output message="tns:FetchSingleAccessPassTemplateResponse"/>
+		</wsdl:operation>
+		<wsdl:operation name="FetchMultiAccessPassTemplate">
+			<wsdl:input message="tns:FetchMultiAccessPassTemplateRequest"/>
+			<wsdl:output message="tns:FetchMultiAccessPassTemplateResponse"/>
+		</wsdl:operation>			
+	</wsdl:portType>
+	<wsdl:binding name="CommonBinding" type="tns:CommonPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="FetchReport">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchReport" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="NameBinding" type="tns:NamePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="FetchProfile">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchProfile" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="SubscribeProfile">
+			<soap:operation soapAction="http://www.reservationassistant.com#SubscribeProfile" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="LookupProfile">
+			<soap:operation soapAction="http://www.reservationassistant.com#LookupProfile" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="NewProfile">
+			<soap:operation soapAction="http://www.reservationassistant.com#NewProfile" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateProfile">
+			<soap:operation soapAction="http://www.reservationassistant.com#UpdateProfile" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="MergeProfile">
+			<soap:operation soapAction="http://www.reservationassistant.com#MergeProfile" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchReservation">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchReservation" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="LookupReservation">
+			<soap:operation soapAction="http://www.reservationassistant.com#LookupReservation" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="VerifyAccount">
+			<soap:operation soapAction="http://www.reservationassistant.com#VerifyAccount" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchExternalProfile">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchExternalProfile" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="ConfigurationBinding" type="tns:ConfigurationPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="TemplateCategory">
+			<soap:operation soapAction="http://www.reservationassistant.com#TemplateCategory" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="TemplateInfo">
+			<soap:operation soapAction="http://www.reservationassistant.com#TemplateInfo" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="PaymentCondition">
+			<soap:operation soapAction="http://www.reservationassistant.com#PaymentCondition" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateTemplate">
+			<soap:operation soapAction="http://www.reservationassistant.com#UpdateTemplate" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="LookupCountry">
+			<soap:operation soapAction="http://www.reservationassistant.com#LookupCountry" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="LookupLanguage">
+			<soap:operation soapAction="http://www.reservationassistant.com#LookupLanguage" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="LookupSegmentCode">
+			<soap:operation soapAction="http://www.reservationassistant.com#LookupSegmentCode" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchUserDetail">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchUserDetail" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="LookupPermissionCondition">
+			<soap:operation soapAction="http://www.reservationassistant.com#LookupPermissionCondition" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="LookupProperty">
+			<soap:operation soapAction="http://www.reservationassistant.com#LookupProperty" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchFeatureSet">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchFeatureSet" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="LookupCustomerType">
+			<soap:operation soapAction="http://www.reservationassistant.com#LookupCustomerType" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="LookupReservationAttributeCategory">
+			<soap:operation soapAction="http://www.reservationassistant.com#LookupReservationAttributeCategory" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchCurrentTimeStamp">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchCurrentTimeStamp" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="LookupGiftCertificateLayouts">
+			<soap:operation soapAction="http://www.reservationassistant.com#LookupGiftCertificateLayouts" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="LookupCourseTags">
+			<soap:operation soapAction="http://www.reservationassistant.com#LookupCourseTags" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="LookupHoliday">
+			<soap:operation soapAction="http://www.reservationassistant.com#LookupHoliday" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>	
+		<wsdl:operation name="UpdateSignature">
+			<soap:operation soapAction="http://www.reservationassistant.com#UpdateSignature" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>				
+	</wsdl:binding>
+	<wsdl:binding name="BookingBinding" type="tns:BookingPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="FetchProfileBookingHistory">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchProfileBookingHistory" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="PostUnpaidHotelBookings">
+			<soap:operation soapAction="http://www.reservationassistant.com#PostUnpaidHotelBookings" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Availability">
+			<soap:operation soapAction="http://www.reservationassistant.com#Availability" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateTimer">
+			<soap:operation soapAction="http://www.reservationassistant.com#UpdateTimer" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+		</wsdl:operation>
+		<wsdl:operation name="Possibility">
+			<soap:operation soapAction="http://www.reservationassistant.com#Possibility" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Create">
+			<soap:operation soapAction="http://www.reservationassistant.com#Create" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="Delete">
+			<soap:operation soapAction="http://www.reservationassistant.com#Delete" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchBooking">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchBooking" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateBooking">
+			<soap:operation soapAction="http://www.reservationassistant.com#UpdateBooking" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchFlight">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchFlight" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchHotDealContingent">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchHotDealContingent" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchRestaurantUtilizationOverview">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchRestaurantUtilizationOverview" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchRestaurantOpeningHours">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchRestaurantOpeningHours" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="AvailableResources">
+			<soap:operation soapAction="http://www.reservationassistant.com#AvailableResources" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ExpressAvailability">
+			<soap:operation soapAction="http://www.reservationassistant.com#ExpressAvailability" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="AddAdditionalService">
+			<soap:operation soapAction="http://www.reservationassistant.com#AddAdditionalService" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchPackage">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchPackage" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>					
+	</wsdl:binding>
+	<wsdl:binding name="GiftCertificateBinding" type="tns:GiftCertificatePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="FetchGiftCertificate">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchGiftCertificate" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="GiftCertificatePreview">
+			<soap:operation soapAction="http://www.reservationassistant.com#GiftCertificatePreview" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ClearGiftCertificate">
+			<soap:operation soapAction="http://www.reservationassistant.com#ClearGiftCertificate" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateGiftCertificate">
+			<soap:operation soapAction="http://www.reservationassistant.com#UpdateGiftCertificate" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchPrepaidCard">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchPrepaidCard" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>		
+	</wsdl:binding>
+	<wsdl:binding name="SaleBinding" type="tns:SalePortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="Sale">
+			<soap:operation soapAction="http://www.reservationassistant.com#Sale" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CancelSale">
+			<soap:operation soapAction="http://www.reservationassistant.com#CancelSale" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchContingent">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchContingent" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="RecalculatePrices">
+			<soap:operation soapAction="http://www.reservationassistant.com#RecalculatePrices" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+	</wsdl:binding>
+	<wsdl:binding name="MembershipBinding" type="tns:MembershipPortType">
+		<soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+		<wsdl:operation name="FetchMemberDetail">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchMemberDetail" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchCheckinStatistic">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchCheckinStatistic" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="AccountPaymentPosting">
+			<soap:operation soapAction="http://www.reservationassistant.com#AccountPaymentPosting" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="MemberCheckin">
+			<soap:operation soapAction="http://www.reservationassistant.com#MemberCheckin" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="MemberCheckout">
+			<soap:operation soapAction="http://www.reservationassistant.com#MemberCheckout" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="LookupMemberDetail">
+			<soap:operation soapAction="http://www.reservationassistant.com#LookupMemberDetail" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateOpportunity">
+			<soap:operation soapAction="http://www.reservationassistant.com#UpdateOpportunity" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchMemberCategory">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchMemberCategory" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CalculateContract">
+			<soap:operation soapAction="http://www.reservationassistant.com#CalculateContract" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="CreateContract">
+			<soap:operation soapAction="http://www.reservationassistant.com#CreateContract" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="ActivateContract">
+			<soap:operation soapAction="http://www.reservationassistant.com#ActivateContract" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="PrintContract">
+			<soap:operation soapAction="http://www.reservationassistant.com#PrintContract" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="DeleteContract">
+			<soap:operation soapAction="http://www.reservationassistant.com#DeleteContract" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="UpdateContractNotification">
+			<soap:operation soapAction="http://www.reservationassistant.com#UpdateContractNotification" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="RequestMediumByCardReader">
+			<soap:operation soapAction="http://www.reservationassistant.com#ReadMediumByCardReader" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchAccountTransaction">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchAccountTransactions" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchSingleAccessPassTemplate">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchSingleAccessPassTemplate" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>
+		<wsdl:operation name="FetchMultiAccessPassTemplate">
+			<soap:operation soapAction="http://www.reservationassistant.com#FetchMultiAccessPassTemplate" style="document"/>
+			<wsdl:input>
+				<soap:body use="literal"/>
+			</wsdl:input>
+			<wsdl:output>
+				<soap:body use="literal"/>
+			</wsdl:output>
+		</wsdl:operation>						
+	</wsdl:binding>
+	<wsdl:service name="AdvancedHTNGGSSService">
+		<wsdl:port name="CommonPortType" binding="tns:CommonBinding">
+			<soap:address location="http://www.reservationassistant.com/"/>
+		</wsdl:port>
+		<wsdl:port name="NamePortType" binding="tns:NameBinding">
+			<soap:address location="http://www.reservationassistant.com/"/>
+		</wsdl:port>
+		<wsdl:port name="ConfigurationPortType" binding="tns:ConfigurationBinding">
+			<soap:address location="http://www.reservationassistant.com/"/>
+		</wsdl:port>
+		<wsdl:port name="BookingPortType" binding="tns:BookingBinding">
+			<soap:address location="http://www.reservationassistant.com/"/>
+		</wsdl:port>
+		<wsdl:port name="GiftCertificatePortType" binding="tns:GiftCertificateBinding">
+			<soap:address location="http://www.reservationassistant.com/"/>
+		</wsdl:port>
+		<wsdl:port name="SalePortType" binding="tns:SaleBinding">
+			<soap:address location="http://www.reservationassistant.com/"/>
+		</wsdl:port>
+		<wsdl:port name="MembershipPortType" binding="tns:MembershipBinding">
+			<soap:address location="http://www.reservationassistant.com/"/>
+		</wsdl:port>
+	</wsdl:service>
+</wsdl:definitions>
